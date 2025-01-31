@@ -3,13 +3,15 @@ import { INVENTORY_SIZE, MOCK_ITEMS } from './types/inventory'
 import InventoryItem from "@/components/InventoryItem.vue";
 import ItemDetails from "@/components/ItemDetails.vue";
 import SkeletonLoader from "@/components/SkeletonLoader.vue";
+import SecondSkeleton from "@/components/SecondSkeleton.vue";
 
 export default {
   name: 'InventoryGrid',
   components: {
     InventoryItem,
     ItemDetails,
-    SkeletonLoader
+    SkeletonLoader,
+    SecondSkeleton
   },
   data() {
     return {
@@ -18,7 +20,7 @@ export default {
       selectedItem: null,
       isHoveringModal: false,
       isModalFixed: false,
-      draggedPosition: null // Добавили это поле
+      draggedPosition: null
     }
   },
   methods: {
@@ -151,7 +153,7 @@ export default {
         </div>
       </div>
     </div>
-
+    <SecondSkeleton/>
     <ItemDetails
         v-if="selectedItem"
         :item="selectedItem"
